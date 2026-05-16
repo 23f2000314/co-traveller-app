@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IITM Co-traveller App | Exam Travel Network for IITM Students</title>
+  <meta name="description" content="A premium product website for IITM Co-traveller App, a verified student network for finding exam travel companions, route matches, midway joins, and ride groups.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar" id="navbar" aria-label="Main navigation">
+    <a class="brand" href="#top" aria-label="IITM Co-traveller home">
+      <span class="brand-mark">IC</span>
+      <span>IITM Co-traveller</span>
+    </a>
+
+    <button class="nav-toggle" id="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-menu">
+      <i data-lucide="menu"></i>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <a href="#product">Story</a>
+      <a href="#highlights">Highlights</a>
+      <a href="#journey">Journey</a>
+      <a href="#features">Specs</a>
+      <a href="#matching">Match</a>
+      <a href="#safety">Safety</a>
+    </div>
+
+    <button class="nav-cta" type="button" data-scroll="#highlights">
+      <i data-lucide="sparkles"></i>
+      <span>Explore</span>
+    </button>
+  </nav>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-copy reveal">
+        <p class="eyebrow"><span></span> Verified IITM BS exam travel network</p>
+        <h1>IITM Co-traveller App</h1>
+        <p class="hero-lede">
+          Find trusted classmates travelling to the same exam centre. Compare route overlap, plan midway joins, coordinate in a ride group, and make exam travel lighter.
+        </p>
+        <div class="hero-actions">
+          <button class="button primary" type="button" data-scroll="#highlights">
+            <i data-lucide="layers-3"></i>
+            <span>Enter the product</span>
+          </button>
+          <button class="button secondary" type="button" data-scroll="#matching">
+            <span>See matching</span>
+            <i data-lucide="arrow-down"></i>
+          </button>
+        </div>
+        <div class="hero-specs" aria-label="Key product specifications">
+          <div>
+            <strong>@study.iitm.ac.in</strong>
+            <span>Student-only access</span>
+          </div>
+          <div>
+            <strong>92% match</strong>
+            <span>Route intelligence</span>
+          </div>
+          <div>
+            <strong>No booking</strong>
+            <span>Connect and coordinate</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="3D route matching product model">
+        <canvas id="route-model"></canvas>
+        <div class="model-caption">
+          <span class="status-light"></span>
+          <span>Live route match preview</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="manifesto" id="product">
+      <div class="manifesto-inner">
+        <p class="section-kicker reveal">The idea</p>
+        <h2 class="statement reveal">
+          The same exam. The same city. The same route. Students should not discover each other only after reaching the centre.
+        </h2>
+        <div class="manifesto-grid">
+          <article class="glass-stat reveal" data-depth-card>
+            <span>01</span>
+            <strong>Verified first</strong>
+            <p>Only IITM BS students enter through IITM mail and phone verification.</p>
+          </article>
+          <article class="glass-stat reveal" data-depth-card>
+            <span>02</span>
+            <strong>Route aware</strong>
+            <p>Starting point, centre, midway points, time, mode, and seats all become match signals.</p>
+          </article>
+          <article class="glass-stat reveal" data-depth-card>
+            <span>03</span>
+            <strong>No payment layer</strong>
+            <p>The app connects students. They plan travel, pickup, and final cost themselves.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-highlights section-band" id="highlights">
+      <div class="highlight-shell">
+        <div class="highlight-head reveal">
+          <p class="section-kicker">Feature highlights</p>
+          <h2>Take a closer look.</h2>
+        </div>
+
+        <div class="highlight-carousel-frame reveal">
+          <div class="highlight-carousel" id="highlight-carousel" aria-label="Application feature highlights" tabindex="0">
+            <article class="highlight-card" data-depth-card>
+              <div class="highlight-photo auth-shot">
+                <div class="mock-device iphone">
+                  <div class="mock-screen">
+                    <div class="mock-status">IITM Co-traveller</div>
+                    <div class="mock-lock"><i data-lucide="shield-check"></i></div>
+                    <strong>Verified IITM access</strong>
+                    <p>@study.iitm.ac.in</p>
+                    <button type="button">Continue with Google</button>
+                    <span>Phone OTP ready</span>
+                  </div>
+                </div>
+              </div>
+              <div class="highlight-copy">
+                <span>Authentication</span>
+                <h3>Only verified students get inside.</h3>
+                <p>Google IITM login and phone OTP create a private network for real IITM BS students before any ride discovery starts.</p>
+              </div>
+            </article>
+
+            <article class="highlight-card wide-highlight" data-depth-card>
+              <div class="highlight-photo route-shot">
+                <div class="mock-device ipad landscape">
+                  <div class="mock-screen map-screen">
+                    <div class="mock-topbar"><span>Chennai</span><strong>Coimbatore centre</strong></div>
+                    <svg viewBox="0 0 760 360" aria-hidden="true">
+                      <path d="M70 252 C188 72, 284 314, 410 172 C520 54, 620 112, 704 72" />
+                      <circle cx="70" cy="252" r="15" />
+                      <circle cx="410" cy="172" r="15" />
+                      <circle cx="704" cy="72" r="15" />
+                    </svg>
+                    <div class="floating-score"><strong>92%</strong><span>match</span></div>
+                    <div class="floating-route">2.4 km midway join</div>
+                  </div>
+                </div>
+              </div>
+              <div class="highlight-copy">
+                <span>Route discovery</span>
+                <h3>Find route overlap, not just people.</h3>
+                <p>Students can search exact starts, nearby routes, and in-between pickup points with a visible match percentage.</p>
+              </div>
+            </article>
+
+            <article class="highlight-card" data-depth-card>
+              <div class="highlight-photo group-shot">
+                <div class="mock-device ipad portrait">
+                  <div class="mock-screen group-screen">
+                    <div class="mock-topbar"><span>End Term</span><strong>Statistics</strong></div>
+                    <div class="big-count">22</div>
+                    <p>students going to Coimbatore centre</p>
+                    <div class="mini-riders">
+                      <span></span><span></span><span></span><span></span>
+                    </div>
+                    <button type="button">View group</button>
+                  </div>
+                </div>
+              </div>
+              <div class="highlight-copy">
+                <span>Exam-based grouping</span>
+                <h3>One subject. One date. Instant crowd.</h3>
+                <p>The app can group students by subject, exam date, city, and centre so they start from a ready-made travel pool.</p>
+              </div>
+            </article>
+
+            <article class="highlight-card wide-highlight" data-depth-card>
+              <div class="highlight-photo midway-shot">
+                <div class="mock-device ipad landscape">
+                  <div class="mock-screen split-screen">
+                    <div class="route-column">
+                      <strong>Midway Join</strong>
+                      <span>Tambaram route</span>
+                      <div class="join-line"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="join-list">
+                      <div><strong>Perungalathur</strong><span>8:20 AM</span></div>
+                      <div><strong>Vandalur</strong><span>8:36 AM</span></div>
+                      <div><strong>Kelambakkam</strong><span>8:55 AM</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="highlight-copy">
+                <span>Midway join</span>
+                <h3>Meet halfway when starts do not match.</h3>
+                <p>Even if the starting point is different, students can join from route-friendly pickup points and still reduce travel cost.</p>
+              </div>
+            </article>
+
+            <article class="highlight-card" data-depth-card>
+              <div class="highlight-photo chat-shot">
+                <div class="mock-device iphone">
+                  <div class="mock-screen chat-screen">
+                    <div class="mock-status">Ride group</div>
+                    <div class="bubble left">Pickup near station?</div>
+                    <div class="bubble right">Yes, 8:15 works.</div>
+                    <div class="bubble left">Final cost split after ride.</div>
+                    <div class="bubble right">Sharing number now.</div>
+                  </div>
+                </div>
+              </div>
+              <div class="highlight-copy">
+                <span>Ride group chat</span>
+                <h3>Coordinate without becoming a booking app.</h3>
+                <p>Auto-created ride groups help students finalize pickup, timing, phone sharing, and final cost outside payments.</p>
+              </div>
+            </article>
+
+            <article class="highlight-card" data-depth-card>
+              <div class="highlight-photo safety-shot">
+                <div class="mock-device ipad portrait">
+                  <div class="mock-screen safety-screen">
+                    <i data-lucide="phone-call"></i>
+                    <strong>Safety controls</strong>
+                    <div class="safety-row"><span>Emergency contact</span><b>On</b></div>
+                    <div class="safety-row"><span>Live location</span><b>Optional</b></div>
+                    <div class="safety-row"><span>Profile visible</span><b>Before join</b></div>
+                  </div>
+                </div>
+              </div>
+              <div class="highlight-copy">
+                <span>Safety layer</span>
+                <h3>Small controls. Big confidence.</h3>
+                <p>Emergency contact, optional live location, and profile visibility keep trust simple without overloading the product.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="highlight-controls" aria-label="Highlight carousel controls">
+            <button class="highlight-arrow" type="button" data-highlight-prev aria-label="Previous highlight">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <div class="highlight-dots" id="highlight-dots" aria-hidden="true"></div>
+            <button class="highlight-arrow" type="button" data-highlight-next aria-label="Next highlight">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cinematic" id="journey">
+      <div class="cinematic-shell">
+        <div class="cinematic-stage reveal">
+          <div class="story-phone" aria-label="Animated app flow preview">
+            <div class="phone-top">
+              <span></span>
+              <span></span>
+            </div>
+            <div class="story-screen">
+              <div class="screen-bar">
+                <strong>IITM Co-traveller</strong>
+                <span>Verified</span>
+              </div>
+              <div class="screen-hero">
+                <p id="story-label">Step 01</p>
+                <h3 id="story-title">Login with IITM mail</h3>
+                <span id="story-copy">Keep the network student-only with @study.iitm.ac.in and OTP verification.</span>
+              </div>
+              <div class="route-widget" aria-hidden="true">
+                <svg viewBox="0 0 460 220" role="img" aria-label="Route match path">
+                  <path class="route-shadow" d="M38 158 C118 62, 178 195, 254 118 C326 46, 372 88, 424 34" />
+                  <path class="route-line" d="M38 158 C118 62, 178 195, 254 118 C326 46, 372 88, 424 34" />
+                  <circle class="route-dot route-dot-a" cx="38" cy="158" r="10" />
+                  <circle class="route-dot route-dot-b" cx="220" cy="142" r="10" />
+                  <circle class="route-dot route-dot-c" cx="424" cy="34" r="10" />
+                </svg>
+                <div class="traveller-pill">
+                  <i data-lucide="car-front"></i>
+                  <span>On route</span>
+                </div>
+              </div>
+              <div class="screen-metrics">
+                <div><strong id="story-metric-a">IITM</strong><span id="story-metric-label-a">Mail gate</span></div>
+                <div><strong id="story-metric-b">OTP</strong><span id="story-metric-label-b">Phone trust</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story-chapters" aria-label="Product journey">
+          <article class="story-chapter active" data-story-title="Login with IITM mail" data-story-copy="Keep the network student-only with @study.iitm.ac.in and OTP verification." data-story-a="IITM" data-story-b="OTP" data-story-label-a="Mail gate" data-story-label-b="Phone trust">
+            <span>01</span>
+            <h2>Only verified classmates get in.</h2>
+            <p>Google IITM login and phone OTP make the first screen feel serious, private, and purpose-built.</p>
+          </article>
+          <article class="story-chapter" data-story-title="Create your exam profile" data-story-copy="Batch, level, gender preference, languages, and subject context sharpen every match." data-story-a="Batch" data-story-b="Level" data-story-label-a="Profile signal" data-story-label-b="Academic track">
+            <span>02</span>
+            <h2>Your profile becomes the trust layer.</h2>
+            <p>Name, mail, and phone come from sign-up. Batch, level, languages, and optional gender help students choose comfortably.</p>
+          </article>
+          <article class="story-chapter" data-story-title="Post a route" data-story-copy="From, exam centre, date, start time, seats, travel mode, and expected cost in one clean flow." data-story-a="Seats" data-story-b="Time" data-story-label-a="Available spots" data-story-label-b="Start window">
+            <span>03</span>
+            <h2>Posting a ride feels instant.</h2>
+            <p>No booking complexity. Just the details students need to understand whether the ride can work.</p>
+          </article>
+          <article class="story-chapter" data-story-title="Discover overlaps" data-story-copy="Search exact starts, nearby routes, and in-between pickup points with a visible match score." data-story-a="92%" data-story-b="2.4 km" data-story-label-a="Route match" data-story-label-b="Midway join">
+            <span>04</span>
+            <h2>The app finds overlap, not just names.</h2>
+            <p>It surfaces students travelling toward the same centre, even when the starting points are not identical.</p>
+          </article>
+          <article class="story-chapter" data-story-title="Coordinate together" data-story-copy="Auto-created group chat helps students finalize pickup, timing, phone sharing, and final cost." data-story-a="Chat" data-story-b="Trust" data-story-label-a="Ride group" data-story-label-b="Trip history">
+            <span>05</span>
+            <h2>Then the group takes over.</h2>
+            <p>Students share numbers only when comfortable, coordinate pickup, and decide cost split outside the app.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="features section-band" id="features">
+      <div class="section-inner">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Specifications</p>
+          <h2>Every feature earns its place.</h2>
+          <p>
+            The product stays focused on discovery, compatibility, coordination, and trust.
+          </p>
+        </div>
+
+        <div class="feature-grid premium-grid">
+          <article class="feature-card reveal" data-depth-card>
+            <i data-lucide="key-round"></i>
+            <h3>Authentication</h3>
+            <p>Google IITM login, @study.iitm.ac.in verification, and phone OTP.</p>
+            <div class="tag-row"><span>Google</span><span>OTP</span><span>IITM only</span></div>
+          </article>
+          <article class="feature-card reveal" data-depth-card>
+            <i data-lucide="user-round-cog"></i>
+            <h3>Profile</h3>
+            <p>Auto-filled identity with batch, level, gender preference, and languages.</p>
+            <div class="tag-row"><span>Batch</span><span>Level</span><span>Comfort</span></div>
+          </article>
+          <article class="feature-card reveal" data-depth-card>
+            <i data-lucide="building-2"></i>
+            <h3>Centre gallery</h3>
+            <p>Exam city to centre gallery to riders list, designed for quick scanning.</p>
+            <div class="tag-row"><span>City</span><span>Centre</span><span>Riders</span></div>
+          </article>
+          <article class="feature-card reveal wide-feature" data-depth-card>
+            <i data-lucide="route"></i>
+            <h3>Ride intelligence</h3>
+            <p>From, to, date, start time, seats, mode of travel, expected cost, nearby routes, route overlap, and match percent working together.</p>
+            <div class="tag-row"><span>From</span><span>To</span><span>Date</span><span>Seats</span><span>Mode</span><span>Match %</span></div>
+          </article>
+          <article class="feature-card reveal" data-depth-card>
+            <i data-lucide="map-pin-plus"></i>
+            <h3>Midway join</h3>
+            <p>Join from exact start or a practical intermediate pickup point.</p>
+            <div class="tag-row"><span>Pickup</span><span>Flexible</span><span>Route</span></div>
+          </article>
+          <article class="feature-card reveal" data-depth-card>
+            <i data-lucide="message-circle-heart"></i>
+            <h3>Group chat</h3>
+            <p>Auto-created ride groups for pickup, timing, contact sharing, and cost discussion.</p>
+            <div class="tag-row"><span>Chat</span><span>Contact</span><span>Plan</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="matching section-band" id="matching">
+      <div class="section-inner match-layout">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Matching engine</p>
+          <h2>Filter the exam crowd until it feels like your route.</h2>
+          <p>
+            Gender preference, languages, level, and subject make discovery more human. Route overlap makes it useful.
+          </p>
+        </div>
+
+        <div class="match-console reveal" data-depth-card aria-label="Interactive matching preview">
+          <div class="console-top">
+            <div>
+              <span>Coimbatore centre</span>
+              <strong>22 students found</strong>
+            </div>
+            <i data-lucide="radar"></i>
+          </div>
+
+          <div class="console-map" aria-hidden="true">
+            <svg viewBox="0 0 720 250">
+              <path d="M40 184 C152 44, 262 230, 372 116 C462 24, 566 78, 682 38" />
+              <circle cx="40" cy="184" r="13" />
+              <circle cx="372" cy="116" r="13" />
+              <circle cx="682" cy="38" r="13" />
+            </svg>
+            <div class="match-score"><strong>92%</strong><span>route match</span></div>
+          </div>
+
+          <div class="filter-group">
+            <p>Gender preference</p>
+            <div class="segmented-control" data-filter-group>
+              <button class="active" type="button">Both</button>
+              <button type="button">Female</button>
+              <button type="button">Male</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <p>Languages spoken</p>
+            <div class="chip-cloud" data-filter-group>
+              <button class="active" type="button">Tamil</button>
+              <button class="active" type="button">English</button>
+              <button type="button">Hindi</button>
+              <button type="button">Telugu</button>
+              <button type="button">Malayalam</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <p>Level</p>
+            <div class="segmented-control" data-filter-group>
+              <button class="active" type="button">Foundation</button>
+              <button type="button">Diploma</button>
+              <button type="button">Degree</button>
+            </div>
+          </div>
+
+          <div class="subject-list">
+            <button class="subject-pill active" type="button"><span>Statistics</span><strong>8</strong></button>
+            <button class="subject-pill" type="button"><span>Programming</span><strong>6</strong></button>
+            <button class="subject-pill" type="button"><span>Maths</span><strong>5</strong></button>
+            <button class="subject-pill" type="button"><span>DBMS</span><strong>3</strong></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="auto-groups section-band">
+      <div class="section-inner">
+        <div class="section-heading reveal centered-heading">
+          <p class="section-kicker">High impact</p>
+          <h2>Manual search is good. Exam-based grouping is magic.</h2>
+          <p>
+            Select subject and exam date. The app immediately shows who is going to the same city and centre.
+          </p>
+        </div>
+
+        <div class="group-showcase reveal">
+          <div class="group-line">
+            <span>Subject</span>
+            <strong>Statistics for Data Science</strong>
+          </div>
+          <div class="group-line">
+            <span>Exam date</span>
+            <strong>End Term</strong>
+          </div>
+          <div class="group-result">
+            <i data-lucide="users-round"></i>
+            <strong>22 students going to Coimbatore centre</strong>
+            <p>Sorted by route overlap, starting point, language, level, and trust score.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="safety section-band" id="safety">
+      <div class="section-inner safety-layout">
+        <div class="section-heading reveal">
+          <p class="section-kicker">Trust and safety</p>
+          <h2>Enough safety to feel responsible. Not so much that the app becomes heavy.</h2>
+        </div>
+
+        <div class="safety-grid">
+          <article class="impact-panel reveal" data-depth-card>
+            <i data-lucide="phone-call"></i>
+            <h3>Emergency contact</h3>
+            <p>A fast action for students who want a basic safety fallback during travel.</p>
+          </article>
+          <article class="impact-panel reveal" data-depth-card>
+            <i data-lucide="navigation"></i>
+            <h3>Optional live location</h3>
+            <p>Share location only when the student chooses, especially after joining a group.</p>
+          </article>
+          <article class="impact-panel reveal" data-depth-card>
+            <i data-lucide="badge-check"></i>
+            <h3>Trust score</h3>
+            <p>Trip count and profile visibility help students decide before sharing contact details.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-inner reveal">
+        <p class="section-kicker">Final form</p>
+        <h2>Built for exam week. Designed to feel premium.</h2>
+        <p>
+          A serious product story for a practical IITM student problem: lower travel expense, easier coordination, and better networking.
+        </p>
+        <button class="button primary" type="button" data-scroll="#top">
+          <i data-lucide="arrow-up"></i>
+          <span>Back to 3D model</span>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="brand footer-brand">
+      <span class="brand-mark">IC</span>
+      <span>IITM Co-traveller</span>
+    </div>
+    <p>Made for IITM BS students. Not an official IIT Madras platform.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
